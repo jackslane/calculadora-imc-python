@@ -48,13 +48,18 @@ def classificar_imc(imc):
     else:
         return "Obesidade"
 
+while True:
+    peso = ler_peso()
+    altura = ler_altura()
+    imc = calcular_imc(peso, altura)
 
-peso = ler_peso()
-altura = ler_altura()
-imc = calcular_imc(peso, altura)
+    print(f"\nSeu IMC é: {imc:.2f}")
 
-print(f"\nSeu IMC é: {imc:.2f}")
+    classificacao = classificar_imc(imc)
+    print(f"Classificação: {classificacao}")
 
-classificacao = classificar_imc(imc)
-print(f"Classificação: {classificacao}")
+    resposta = input("\nDeseja calcular outro IMC?: (s/n) ")
 
+    if resposta.lower() == "n":
+     print("\nPrograma encerrado.")
+     break
